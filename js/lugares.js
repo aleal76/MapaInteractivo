@@ -19,7 +19,22 @@ lugaresModulo = (function () {
     // Busca lugares con el tipo especificado en el campo de TipoDeLugar
 
   function buscarCerca (posicion) {
-        /* Completar la función buscarCerca  que realice la búsqueda de los lugares
+    var radio = document.getElementById('radio').value;
+    var tipoDeLugar = document.getElementById('tipoDeLugar').value;
+    var request =  {
+      location: posicion, 
+      radius: radio, 
+      type: [tipoDeLugar]};    
+    console.log("aquí adentro de buscarcerca", request);
+      servicioLugares.nearbySearch(request,callback);
+
+    function callback(results, status) {
+      if (status == google.maps.places.PlacesServiceStatus.OK) {
+            marcadorModulo.marcarLugares(results,status);
+            console.log("busco ok", results);
+         }
+    }  
+    /* Completar la función buscarCerca  que realice la búsqueda de los lugares
     del tipo (tipodeLugar) y con el radio indicados en el HTML cerca del lugar
     pasado como parámetro y llame a la función marcarLugares. */
 
