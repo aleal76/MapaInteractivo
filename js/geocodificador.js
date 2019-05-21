@@ -8,7 +8,7 @@ geocodificadorModulo = (function () {
         //map.setCenter(results[0].geometry.location);
         console.log(funcionALlamar);
         posicionCentral = results[0].geometry.location; 
-        // centro el mapa ya que si no lo hago aquí busca lugares cercanos al centro del mapa y no a la nueva dirección
+        // centro el mapa ya que si no lo hago aquí busca lugares cercanos al centro del mapa y no a la nueva dirección y marker que acabo de encontrar (vía nearbysearch).
 
         funcionALlamar(direccion, results[0].geometry.location);
 

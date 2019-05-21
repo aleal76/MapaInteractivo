@@ -75,7 +75,11 @@ marcadorModulo = (function () {
 
   var rango = document.getElementById('radio')
   rango.addEventListener('change', function () {
-    marcadorModulo.marcar()
+    tipoDeLugar = document.getElementById('tipoDeLugar').value;
+    if (tipoDeLugar!="") // para que no busque y muestre si no hay tipo elegido
+    {
+      marcadorModulo.marcar();
+    }
   })
 
   rango.addEventListener('input', function () {
@@ -230,9 +234,9 @@ marcadorModulo = (function () {
     borrarMarcadores(marcadores)
     console.log('lugar: ' + document.getElementById('tipoDeLugar').value)
     if (marcadorModulo.existeMiMarcador()) {
-      var miPosicion = marcadorModulo.damePosicion()
+      var miPosicion = marcadorModulo.damePosicion();
     } else {
-      miPosicion = posicionCentral
+      miPosicion = posicionCentral;
     }
     lugaresModulo.buscarCerca(miPosicion)
     // cambio el centro del mapa a miPosicion
