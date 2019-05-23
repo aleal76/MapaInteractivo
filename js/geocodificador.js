@@ -1,19 +1,18 @@
 geocodificadorModulo = (function () {
   var geocodificador // Geocodificador que dada una dirección devuelve una coordenada
+  
 
-  // Permite obtener las coordenadas y las usa con la función llamada por parámtero
+   // Permite obtener las coordenadas y las usa con la función llamada por parámtero
   function usaDireccion(direccion, funcionALlamar) {
     geocodificador.geocode({ 'address': direccion }, function (results, status) {
       if (status == 'OK') {
-        //map.setCenter(results[0].geometry.location);
-        console.log(funcionALlamar);
         posicionCentral = results[0].geometry.location; 
         // centro el mapa ya que si no lo hago aquí busca lugares cercanos al centro del mapa y no a la nueva dirección y marker que acabo de encontrar (vía nearbysearch).
 
         funcionALlamar(direccion, results[0].geometry.location);
 
       } else {
-        alert('Geocode was not successful for the following reason: ' + status);
+        alert('No se encontró la dirección: ' + status);
       }
     });
 

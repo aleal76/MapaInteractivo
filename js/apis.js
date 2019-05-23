@@ -5,11 +5,12 @@ var posicionCentral = {lat: -29.408599, lng: -66.852961}
 
 // Inicializa el mapa con un valor de zoom y una locación en el medio
 function inicializarMapa () {
+  
+ 
   mapa = new google.maps.Map(document.getElementById('map'), {
     center: posicionCentral,
     zoom: 15    
   });
-
      
     /* Modificá la variable mapa con el constructor Map().
     Tendrás que asignarle un valor de zoom y

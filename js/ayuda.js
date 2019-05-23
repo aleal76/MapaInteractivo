@@ -331,3 +331,4 @@ $.each(tiposDeLugares, function (i, item) {
     text: item.text
   }))
 })
+
